@@ -4,6 +4,7 @@ import by.bsuir.lab1.tasks.Task2;
 import by.bsuir.lab1.tasks.Task3;
 import by.bsuir.lab1.tasks.Task4;
 import by.bsuir.lab1.tasks.Task5;
+import by.bsuir.lab1.tasks.Task6;
 
 import java.util.ArrayList;
 
@@ -15,6 +16,7 @@ public class Program {
         outputTask3();
         outputTask4();
         outputTask5();
+        outputTask6();
     }
 
     public static void outputTask1(){
@@ -72,6 +74,14 @@ public class Program {
         return result.toString();
     }
 
+    private static String arrayToString(double[] arr) {
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < arr.length; i++) {
+            result.append(String.format("%4.1f ", arr[i]));
+        }
+        return result.toString();
+    }
+
     public static void outputTask4(){
         Task4 task4 = new Task4();
         int[] arr1 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
@@ -110,6 +120,31 @@ public class Program {
         System.out.format("Remove %d numbers.\n\n", task5.search(arr2));
         System.out.format("Source array 3: %s\n", arrayToString(arr3, false));
         System.out.format("Remove %d numbers.\n\n", task5.search(arr3));
+
+    }
+
+    private static String matrixToString(double[][] matrix) {
+        int lengthX = matrix[0].length;
+        int lengthY = matrix.length;
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 0; i < lengthY; i++) {
+            for (int j = 0; j < lengthX; j++) {
+                result.append(String.format("%4.1f ", matrix[i][j]));
+            }
+            result.append("\n");
+        }
+        return result.toString();
+    }
+
+    public static void outputTask6(){
+        Task6 task6 = new Task6();
+        double[] arr = {0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8};
+
+        System.out.println("\nTASK 6");
+        System.out.format("Source array: %s\n", arrayToString(arr));
+        System.out.format("Matrix:\n%s\n\n", matrixToString(task6.getMatrix(arr)));
+
 
     }
 }
