@@ -5,6 +5,7 @@ import by.bsuir.lab1.tasks.Task3;
 import by.bsuir.lab1.tasks.Task4;
 import by.bsuir.lab1.tasks.Task5;
 import by.bsuir.lab1.tasks.Task6;
+import by.bsuir.lab1.tasks.Task7;
 
 import java.util.ArrayList;
 
@@ -17,6 +18,7 @@ public class Program {
         outputTask4();
         outputTask5();
         outputTask6();
+        outputTask7();
     }
 
     public static void outputTask1(){
@@ -119,7 +121,7 @@ public class Program {
         System.out.format("Source array 2: %s\n", arrayToString(arr2, false));
         System.out.format("Remove %d numbers.\n\n", task5.search(arr2));
         System.out.format("Source array 3: %s\n", arrayToString(arr3, false));
-        System.out.format("Remove %d numbers.\n\n", task5.search(arr3));
+        System.out.format("Remove %d numbers.\n", task5.search(arr3));
 
     }
 
@@ -143,7 +145,16 @@ public class Program {
 
         System.out.println("\nTASK 6");
         System.out.format("Source array: %s\n", arrayToString(arr));
-        System.out.format("Matrix:\n%s\n\n", matrixToString(task6.getMatrix(arr)));
+        System.out.format("Matrix:\n%s", matrixToString(task6.getMatrix(arr)));
+    }
+
+    public static void outputTask7(){
+        Task7 task7 = new Task7();
+        double[] arr = {0.1, 0.3, 0.9, 0.4, 0.5, 0.8, 0.2, 0.7, 0.6};
+
+        System.out.println("\nTASK 7");
+        System.out.format("Source array: %s\n", arrayToString(arr));
+        System.out.format("Sorting array: %s\n", arrayToString(task7.shellSorting(arr)));
 
 
     }
