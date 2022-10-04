@@ -3,6 +3,7 @@ import by.bsuir.lab1.tasks.Task1;
 import by.bsuir.lab1.tasks.Task2;
 import by.bsuir.lab1.tasks.Task3;
 import by.bsuir.lab1.tasks.Task4;
+import by.bsuir.lab1.tasks.Task5;
 
 import java.util.ArrayList;
 
@@ -13,6 +14,7 @@ public class Program {
         outputTask2();
         outputTask3();
         outputTask4();
+        outputTask5();
     }
 
     public static void outputTask1(){
@@ -90,5 +92,24 @@ public class Program {
         temp = task4.searchPrimeNumbers(arr3);
         System.out.format("Position of primes: %s\n\n", temp[0] != -1? arrayToString(temp, true):
                                                                         "there are no prime numbers in the array");
+    }
+
+    public static void outputTask5(){
+        Task5 task5 = new Task5();
+        // Remove 4 numbers. For example 10, 12, 3, 2 or 6, 3, 7, 8
+        int[] arr1 = {5, 10, 6, 12, 3, 24, 7, 8};
+        // Remove 6 numbers.
+        int[] arr2 = {20, 12, 9, 8, 5, 3, 1};
+        // Remove 0 numbers.
+        int[] arr3 = {2, 12, 15, 35, 100, 1500};
+
+        System.out.println("\nTASK 5");
+        System.out.format("Source array 1: %s\n", arrayToString(arr1, false));
+        System.out.format("Remove %d numbers.\n\n", task5.search(arr1));
+        System.out.format("Source array 2: %s\n", arrayToString(arr2, false));
+        System.out.format("Remove %d numbers.\n\n", task5.search(arr2));
+        System.out.format("Source array 3: %s\n", arrayToString(arr3, false));
+        System.out.format("Remove %d numbers.\n\n", task5.search(arr3));
+
     }
 }
