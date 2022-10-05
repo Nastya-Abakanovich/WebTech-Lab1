@@ -7,6 +7,7 @@ import by.bsuir.lab1.tasks.Task5;
 import by.bsuir.lab1.tasks.Task6;
 import by.bsuir.lab1.tasks.Task7;
 import by.bsuir.lab1.tasks.Task8;
+import by.bsuir.lab1.tasks.task9.*;
 
 import java.util.ArrayList;
 
@@ -21,6 +22,7 @@ public class Program {
         outputTask6();
         outputTask7();
         outputTask8();
+        outputTask9();
     }
 
     public static void outputTask1(){
@@ -167,8 +169,6 @@ public class Program {
         System.out.println("\nTASK 7");
         System.out.format("Source array: %s\n", arrayToString(arr));
         System.out.format("Sorting array: %s\n", arrayToString(task7.shellSorting(arr)));
-
-
     }
 
     public static void outputTask8(){
@@ -199,5 +199,26 @@ public class Program {
         result = task8.getNonDecreasingSequence(arrA3, arrB3);
         System.out.format("Resulting array3: %s\n", arrayToString(result[0]));
         System.out.format("Insertion position: %s\n", arrayToStringWithoutNegative(result[1]));
+    }
+
+    public static void outputTask9(){
+        Basket basket = new Basket();
+        // Sum = 107.1, blue balls number = 3
+        Ball[] balls = {new Ball(10.5, Colors.BLACK),
+                        new Ball(20.0, Colors.BLUE),
+                        new Ball(18.5, Colors.PINK),
+                        new Ball(12.3, Colors.BLUE),
+                        new Ball(5.7, Colors.BLACK),
+                        new Ball(6.2, Colors.RED),
+                        new Ball(11.8, Colors.WHITE),
+                        new Ball(22.1, Colors.BLUE),
+        };
+
+        System.out.println("\nTASK 9");
+        for (Ball ball: balls) {
+            basket.catchBall(ball);
+        }
+        System.out.format("Total weight: %5.1f\n", basket.getTotalWeight());
+        System.out.format("Blue balls number: %d\n", basket.getBlueBallsNumber());
     }
 }
