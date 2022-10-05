@@ -1,12 +1,12 @@
 package by.bsuir.lab1;
-import by.bsuir.lab1.tasks.Task1;
+/*import by.bsuir.lab1.tasks.Task1;
 import by.bsuir.lab1.tasks.Task2;
 import by.bsuir.lab1.tasks.Task3;
 import by.bsuir.lab1.tasks.Task4;
 import by.bsuir.lab1.tasks.Task5;
 import by.bsuir.lab1.tasks.Task6;
 import by.bsuir.lab1.tasks.Task7;
-import by.bsuir.lab1.tasks.Task8;
+import by.bsuir.lab1.tasks.Task8;*/
 import by.bsuir.lab1.tasks.task9.*;
 
 import java.util.ArrayList;
@@ -14,18 +14,18 @@ import java.util.ArrayList;
 public class Program {
 
     public static void main(String[] args) {
-        outputTask1();
+        /*outputTask1();
         outputTask2();
         outputTask3();
         outputTask4();
         outputTask5();
         outputTask6();
         outputTask7();
-        outputTask8();
+        outputTask8();*/
         outputTask9();
     }
 
-    public static void outputTask1(){
+   /* public static void outputTask1(){
         double [][] arr = {{0.5, 0.5}, {1, 1}, {10, 12.1}, {5.5, 5.5}, {0, 0}, {200.7, 100.5}};
         Task1 task1 = new Task1();
 
@@ -200,7 +200,7 @@ public class Program {
         System.out.format("Resulting array3: %s\n", arrayToString(result[0]));
         System.out.format("Insertion position: %s\n", arrayToStringWithoutNegative(result[1]));
     }
-
+*/
     public static void outputTask9(){
         Basket basket = new Basket();
         // Sum = 107.1, blue balls number = 3
