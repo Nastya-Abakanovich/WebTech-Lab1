@@ -6,6 +6,7 @@ import by.bsuir.lab1.tasks.Task4;
 import by.bsuir.lab1.tasks.Task5;
 import by.bsuir.lab1.tasks.Task6;
 import by.bsuir.lab1.tasks.Task7;
+import by.bsuir.lab1.tasks.Task8;
 
 import java.util.ArrayList;
 
@@ -19,6 +20,7 @@ public class Program {
         outputTask5();
         outputTask6();
         outputTask7();
+        outputTask8();
     }
 
     public static void outputTask1(){
@@ -80,6 +82,16 @@ public class Program {
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < arr.length; i++) {
             result.append(String.format("%4.1f ", arr[i]));
+        }
+        return result.toString();
+    }
+
+    private static String arrayToStringWithoutNegative(double[] arr) {
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != -1) {
+                result.append(String.format("%2.0f ", arr[i]));
+            }
         }
         return result.toString();
     }
@@ -157,5 +169,35 @@ public class Program {
         System.out.format("Sorting array: %s\n", arrayToString(task7.shellSorting(arr)));
 
 
+    }
+
+    public static void outputTask8(){
+        Task8 task8 = new Task8();
+        double[] arrA1 = {0.1, 0.2, 0.3, 0.4};
+        double[] arrB1 = {0.5, 0.6, 0.7, 0.8, 0.9, 1};
+        double[] arrA2 = {0.5, 0.6, 0.7};
+        double[] arrB2 = {0.1, 0.2, 0.3, 0.4};
+        double[] arrA3 = {0.1, 0.2, 0.3, 0.4, 0.7};
+        double[] arrB3 = {0.2, 0.2, 0.5, 0.6, 0.8};
+        double[][] result;
+
+        System.out.println("\nTASK 8");
+        System.out.format("Source array A1: %s\n", arrayToString(arrA1));
+        System.out.format("Source array B1: %s\n", arrayToString(arrB1));
+        result = task8.getNonDecreasingSequence(arrA1, arrB1);
+        System.out.format("Resulting array1: %s\n", arrayToString(result[0]));
+        System.out.format("Insertion position: %s\n\n", arrayToStringWithoutNegative(result[1]));
+
+        System.out.format("Source array A2: %s\n", arrayToString(arrA2));
+        System.out.format("Source array B2: %s\n", arrayToString(arrB2));
+        result = task8.getNonDecreasingSequence(arrA2, arrB2);
+        System.out.format("Resulting array2: %s\n", arrayToString(result[0]));
+        System.out.format("Insertion position: %s\n\n", arrayToStringWithoutNegative(result[1]));
+
+        System.out.format("Source array A3: %s\n", arrayToString(arrA3));
+        System.out.format("Source array B3: %s\n", arrayToString(arrB3));
+        result = task8.getNonDecreasingSequence(arrA3, arrB3);
+        System.out.format("Resulting array3: %s\n", arrayToString(result[0]));
+        System.out.format("Insertion position: %s\n", arrayToStringWithoutNegative(result[1]));
     }
 }
