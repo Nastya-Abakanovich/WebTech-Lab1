@@ -8,6 +8,7 @@ import by.bsuir.lab1.tasks.Task6;
 import by.bsuir.lab1.tasks.Task7;
 import by.bsuir.lab1.tasks.Task8;*/
 import by.bsuir.lab1.tasks.task9.*;
+import by.bsuir.lab1.tasks.task12.Book;
 
 import java.util.ArrayList;
 
@@ -23,6 +24,7 @@ public class Program {
         outputTask7();
         outputTask8();*/
         outputTask9();
+        outputTask12();
     }
 
    /* public static void outputTask1(){
@@ -221,4 +223,37 @@ public class Program {
         System.out.format("Total weight: %5.1f\n", basket.getTotalWeight());
         System.out.format("Blue balls number: %d\n", basket.getBlueBallsNumber());
     }
+
+    public static void outputTask12(){
+        Book book1 = new Book();
+        Book book2 = new Book();
+        Book book3 = new Book("The best book", "The best author", 15);
+
+        System.out.println("\nTASK 12");
+        System.out.format("Book 1:\n%s\n", book1.toString());
+        System.out.format("hash code: %d\n", book1.hashCode());
+        System.out.format("Book 2:\n%s\n", book2.toString());
+        System.out.format("hash code: %d\n", book2.hashCode());
+        System.out.format("Book 3:\n%s\n", book3.toString());
+        System.out.format("hash code: %d\n", book3.hashCode());
+        if (book1.equals(book2)) {
+            System.out.format("Book 1 is equal book 2\n");
+        } else {
+            System.out.format("Book 1 is not equal book 2\n");
+        }
+
+        if (book1.equals(book3)) {
+            System.out.format("Book 1 is equal book 3\n");
+        } else {
+            System.out.format("Book 1 is not equal book 3\n");
+        }
+
+        if (book2.equals(book3)) {
+            System.out.format("Book 2 is equal book 3\n");
+        } else {
+            System.out.format("Book 2 is not equal book 3\n");
+        }
+
+    }
+
 }
