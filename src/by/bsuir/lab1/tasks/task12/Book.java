@@ -61,5 +61,17 @@ public class Book implements Comparable<Book>{
     public int compareTo(Book book){
         return this.isbn.compareTo(book.isbn);
     }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getTitle() {
+        return title;
+    }
 }
 

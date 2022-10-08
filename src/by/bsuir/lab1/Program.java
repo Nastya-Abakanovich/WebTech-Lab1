@@ -1,39 +1,42 @@
 package by.bsuir.lab1;
-/*import by.bsuir.lab1.tasks.Task1;
+import by.bsuir.lab1.tasks.Task1;
 import by.bsuir.lab1.tasks.Task2;
 import by.bsuir.lab1.tasks.Task3;
 import by.bsuir.lab1.tasks.Task4;
 import by.bsuir.lab1.tasks.Task5;
 import by.bsuir.lab1.tasks.Task6;
 import by.bsuir.lab1.tasks.Task7;
-import by.bsuir.lab1.tasks.Task8;*/
+import by.bsuir.lab1.tasks.Task8;
 import by.bsuir.lab1.tasks.task9.*;
 import by.bsuir.lab1.tasks.task12.Book;
 import by.bsuir.lab1.tasks.task13.ProgrammerBook;
+import by.bsuir.lab1.tasks.task15.*;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Program {
 
     public static void main(String[] args) {
-        /*outputTask1();
+        outputTask1();
         outputTask2();
         outputTask3();
         outputTask4();
         outputTask5();
         outputTask6();
         outputTask7();
-        outputTask8();*/
+        outputTask8();
         outputTask9();
         outputTask12();
         outputTask13();
         outputTask14_1();
         outputTask14_2();
+        outputTask15();
     }
 
-   /* public static void outputTask1(){
+    public static void outputTask1(){
         double [][] arr = {{0.5, 0.5}, {1, 1}, {10, 12.1}, {5.5, 5.5}, {0, 0}, {200.7, 100.5}};
         Task1 task1 = new Task1();
 
@@ -208,7 +211,7 @@ public class Program {
         System.out.format("Resulting array3: %s\n", arrayToString(result[0]));
         System.out.format("Insertion position: %s\n", arrayToStringWithoutNegative(result[1]));
     }
-*/
+
     public static void outputTask9(){
         Basket basket = new Basket();
         // Sum = 107.1, blue balls number = 3
@@ -322,6 +325,38 @@ public class Program {
         Collections.sort(library);
         System.out.println("\nAfter sorting:");
         library.forEach(System.out::println);
+    }
+
+    public static void outputTask15(){
+        Comparator<Book> titleComparator = new BookTitleComparator();
+        Comparator<Book> titleAuthorComparator = new BookTitleComparator().thenComparing(new BookAuthorComparator());
+        Comparator<Book> authorTitleComparator = new BookAuthorComparator().thenComparing(new BookTitleComparator());
+        Comparator<Book> authorTitlePriceComparator = new BookAuthorComparator().thenComparing(new BookTitleComparator()).
+                thenComparing(new BookPriceComparator());
+
+        List<Book> library = new ArrayList<>();
+        library.add(new Book("C", "D", 10));
+        library.add(new Book("A", "E", 12));
+        library.add(new Book("B", "G", 15));
+        library.add(new Book("A", "K", 5));
+        library.add(new Book("A", "E", 3));
+
+        System.out.println("\nTASK 15");
+        System.out.println("Before sorting:");
+        library.forEach(System.out::println);
+        System.out.println("\nAfter title sorting:");
+        library.sort(titleComparator);
+        library.forEach(System.out::println);
+        System.out.println("\nAfter title-author sorting:");
+        library.sort(titleAuthorComparator);
+        library.forEach(System.out::println);
+        System.out.println("\nAfter author-title sorting:");
+        library.sort(authorTitleComparator);
+        library.forEach(System.out::println);
+        System.out.println("\nAfter author-title-price sorting:");
+        library.sort(authorTitlePriceComparator);
+        library.forEach(System.out::println);
+
     }
 
 }
