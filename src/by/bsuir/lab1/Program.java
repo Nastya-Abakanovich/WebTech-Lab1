@@ -12,6 +12,8 @@ import by.bsuir.lab1.tasks.task12.Book;
 import by.bsuir.lab1.tasks.task13.ProgrammerBook;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Program {
 
@@ -28,6 +30,7 @@ public class Program {
         outputTask12();
         outputTask13();
         outputTask14_1();
+        outputTask14_2();
     }
 
    /* public static void outputTask1(){
@@ -233,11 +236,11 @@ public class Program {
         Book book3 = new Book("The best book", "The best author", 15);
 
         System.out.println("\nTASK 12");
-        System.out.format("Book 1:\n%s\n", book1.toString());
+        System.out.format("Book 1:\n%s\n", book1);
         System.out.format("hash code: %d\n", book1.hashCode());
-        System.out.format("Book 2:\n%s\n", book2.toString());
+        System.out.format("Book 2:\n%s\n", book2);
         System.out.format("hash code: %d\n", book2.hashCode());
-        System.out.format("Book 3:\n%s\n", book3.toString());
+        System.out.format("Book 3:\n%s\n", book3);
         System.out.format("hash code: %d\n", book3.hashCode());
         if (book1.equals(book2)) {
             System.out.format("Book 1 is equal book 2\n");
@@ -265,11 +268,11 @@ public class Program {
         ProgrammerBook book3 = new ProgrammerBook("The best book", "The best author", 15, "C#", 2);
 
         System.out.println("\nTASK 13");
-        System.out.format("Book 1:\n%s\n", book1.toString());
+        System.out.format("Book 1:\n%s\n", book1);
         System.out.format("hash code: %d\n", book1.hashCode());
-        System.out.format("Book 2:\n%s\n", book2.toString());
+        System.out.format("Book 2:\n%s\n", book2);
         System.out.format("hash code: %d\n", book2.hashCode());
-        System.out.format("Book 3:\n%s\n", book3.toString());
+        System.out.format("Book 3:\n%s\n", book3);
         System.out.format("hash code: %d\n", book3.hashCode());
         if (book1.equals(book2)) {
             System.out.format("Book 1 is equal book 2\n");
@@ -296,7 +299,7 @@ public class Program {
         Book cloneBook = (Book) book.clone();
 
         System.out.println("\nTASK 14_1");
-        System.out.format("Book:\n%s\n", book.toString());
+        System.out.format("Book:\n%s\n", book);
         System.out.format("Clone book:\n%s\n", cloneBook.toString());
         if (book.equals(cloneBook)) {
             System.out.format("Book is equal clone book\n");
@@ -304,6 +307,21 @@ public class Program {
             System.out.format("Book is not equal clone book\n");
         }
 
+    }
+
+    public static void outputTask14_2(){
+        List<Book> library = new ArrayList<>();
+        library.add(new Book("Book4", "Author", 15, "978-2-266-12160-0")); //4
+        library.add(new Book("Book2", "Author", 15, "978-2-266-11160-1")); //2
+        library.add(new Book("Book1", "Author", 15, "978-2-266-11160-0")); //1
+        library.add(new Book("Book3", "Author", 15, "978-2-266-11161-0")); //3
+
+        System.out.println("\nTASK 14_2");
+        System.out.println("Before sorting:");
+        library.forEach(System.out::println);
+        Collections.sort(library);
+        System.out.println("\nAfter sorting:");
+        library.forEach(System.out::println);
     }
 
 }
