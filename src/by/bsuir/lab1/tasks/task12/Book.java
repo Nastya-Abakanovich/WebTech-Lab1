@@ -39,7 +39,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return String.format("title: %s, author: %s, price: %d", title, author, price);
+        return String.format("title=%s, author=%s, price=%d", title, author, price);
     }
 }
 

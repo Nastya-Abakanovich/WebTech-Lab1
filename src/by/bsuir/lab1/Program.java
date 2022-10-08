@@ -9,6 +9,7 @@ import by.bsuir.lab1.tasks.Task7;
 import by.bsuir.lab1.tasks.Task8;*/
 import by.bsuir.lab1.tasks.task9.*;
 import by.bsuir.lab1.tasks.task12.Book;
+import by.bsuir.lab1.tasks.task13.ProgrammerBook;
 
 import java.util.ArrayList;
 
@@ -25,6 +26,7 @@ public class Program {
         outputTask8();*/
         outputTask9();
         outputTask12();
+        outputTask13();
     }
 
    /* public static void outputTask1(){
@@ -230,6 +232,38 @@ public class Program {
         Book book3 = new Book("The best book", "The best author", 15);
 
         System.out.println("\nTASK 12");
+        System.out.format("Book 1:\n%s\n", book1.toString());
+        System.out.format("hash code: %d\n", book1.hashCode());
+        System.out.format("Book 2:\n%s\n", book2.toString());
+        System.out.format("hash code: %d\n", book2.hashCode());
+        System.out.format("Book 3:\n%s\n", book3.toString());
+        System.out.format("hash code: %d\n", book3.hashCode());
+        if (book1.equals(book2)) {
+            System.out.format("Book 1 is equal book 2\n");
+        } else {
+            System.out.format("Book 1 is not equal book 2\n");
+        }
+
+        if (book1.equals(book3)) {
+            System.out.format("Book 1 is equal book 3\n");
+        } else {
+            System.out.format("Book 1 is not equal book 3\n");
+        }
+
+        if (book2.equals(book3)) {
+            System.out.format("Book 2 is equal book 3\n");
+        } else {
+            System.out.format("Book 2 is not equal book 3\n");
+        }
+
+    }
+
+    public static void outputTask13(){
+        ProgrammerBook book1 = new ProgrammerBook();
+        ProgrammerBook book2 = new ProgrammerBook();
+        ProgrammerBook book3 = new ProgrammerBook("The best book", "The best author", 15, "C#", 2);
+
+        System.out.println("\nTASK 13");
         System.out.format("Book 1:\n%s\n", book1.toString());
         System.out.format("hash code: %d\n", book1.hashCode());
         System.out.format("Book 2:\n%s\n", book2.toString());
