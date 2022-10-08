@@ -27,6 +27,7 @@ public class Program {
         outputTask9();
         outputTask12();
         outputTask13();
+        outputTask14_1();
     }
 
    /* public static void outputTask1(){
@@ -286,6 +287,21 @@ public class Program {
             System.out.format("Book 2 is equal book 3\n");
         } else {
             System.out.format("Book 2 is not equal book 3\n");
+        }
+
+    }
+
+    public static void outputTask14_1(){
+        Book book = new Book("The best book", "The best author", 15);
+        Book cloneBook = (Book) book.clone();
+
+        System.out.println("\nTASK 14_1");
+        System.out.format("Book:\n%s\n", book.toString());
+        System.out.format("Clone book:\n%s\n", cloneBook.toString());
+        if (book.equals(cloneBook)) {
+            System.out.format("Book is equal clone book\n");
+        } else {
+            System.out.format("Book is not equal clone book\n");
         }
 
     }
